@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff7900">
+  <title>شیرینیکو | دنیای خوراکی‌های خارجی</title>
+  <style>
+    :root{--orange:#ff7900;--orange2:#ff9f1c;--ink:#222b38;--muted:#78808b;--bg:#fffaf5;--line:#f1e7dc;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    .top{background:linear-gradient(110deg,#ff6900,#ff9f1c);color:white;padding:18px 16px 22px;border-radius:0 0 24px 24px}
+    .topline{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .brand{font-weight:900;font-size:28px;letter-spacing:-1px}
+    .tagline{font-size:12px;margin-top:4px;opacity:.95}
+    .search{flex:1;min-width:180px;display:flex;background:white;border-radius:30px;padding:5px 14px;align-items:center;gap:8px}
+    .search span{color:var(--orange);font-size:20px}
+    .search input{border:0;outline:0;width:100%;padding:9px 0;color:var(--ink);background:transparent}
+    .cart{border:1px solid #ffffff70;background:#ffffff20;color:white;padding:10px 13px;border-radius:14px;font-weight:bold}
+    main{max-width:1100px;margin:20px auto;padding:0 14px}
+    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;align-items:center;background:linear-gradient(120deg,#ffe5a6,#ffbd45);border-radius:24px;padding:24px;overflow:hidden}
+    .hero h1{font-size:clamp(24px,4vw,38px);line-height:1.55;margin:0 0 10px;color:#34220e}
+    .hero p{line-height:2;margin:0 0 18px;color:#604522}
+    .primary{border:0;border-radius:14px;background:var(--orange);color:white;padding:12px 18px;font-weight:bold;box-shadow:0 5px 12px #f0780030}
+    .hero-art{display:flex;justify-content:center;align-items:center;font-size:clamp(70px,12vw,130px);filter:drop-shadow(0 10px 8px #9d5c2930)}
+    .eyebrow{display:inline-block;background:#fff9e7;border:1px solid #ffd36e;color:#985300;padding:6px 10px;border-radius:30px;font-size:12px;margin-bottom:10px}
+    .section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:26px 2px 14px}
+    .section-head h2{font-size:20px;margin:0}
+    .section-head small{color:var(--muted)}
+    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .cat{border:1px solid var(--line);background:white;border-radius:18px;padding:14px 6px;text-align:center;color:var(--ink);transition:.15s}
+    .cat:hover,.cat.active{border-color:var(--orange);background:#fff1e3;transform:translateY(-2px)}
+    .cat .emoji{display:block;font-size:30px;margin-bottom:8px}
+    .cat span:last-child{font-size:13px;font-weight:bold}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .product{background:white;border:1px solid var(--line);border-radius:20px;padding:12px;box-shadow:0 5px 18px #5a321008;display:flex;flex-direction:column;min-width:0}
+    .picture{height:135px;border-radius:15px;background:linear-gradient(135deg,#fff4e8,#fff9f4);display:flex;align-items:center;justify-content:center;font-size:65px;position:relative}
+    .discount{position:absolute;top:9px;right:9px;background:#ff5b23;color:white;font-size:11px;padding:5px 7px;border-radius:20px}
+    .product h3{font-size:14px;line-height:1.8;min-height:50px;margin:10px 0 4px}
+    .meta{font-size:11px;color:var(--muted);margin-bottom:10px}
+    .price-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto}
+    .price{color:#ef5b00;font-weight:900;font-size:15px;white-space:nowrap}
+    .unit{font-size:10px;color:var(--muted)}
+    .add{width:100%;margin-top:12px;border:0;border-radius:12px;padding:10px;background:#fff0df;color:#c94e00;font-weight:bold}
+    .add:hover{background:var(--orange);color:white}
+    .banner{margin:24px 0;background:linear-gradient(110deg,#ff6500,#ff9b13);color:white;border-radius:22px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .banner strong{font-size:20px}
+    .banner p{margin:8px 0 0;line-height:1.8;font-size:13px}
+    .banner .snacks{font-size:44px;white-space:nowrap}
+    .empty{display:none;text-align:center;background:white;border:1px dashed var(--line);padding:28px;border-radius:18px;color:var(--muted)}
+    footer{text-align:center;padding:24px 12px 34px;color:var(--muted);font-size:12px;line-height:2}
+    .notice{font-size:12px;color:#8c5a2a;background:#fff4df;border-radius:12px;padding:10px 12px;margin-top:14px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:20px}.hero-art{order:-1;font-size:72px}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.picture{height:115px}.banner .snacks{font-size:30px}}
+    @media(max-width:380px){.brand{font-size:24px}.products{gap:8px}.product{padding:8px}.price{font-size:13px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="topline">
+      <div>
+        <div class="brand">Shiriniko 🍬</div>
+        <div class="tagline">دنیای خوشمزه‌ی خوراکی‌های خارجی</div>
+      </div>
+      <label class="search" aria-label="جست‌وجوی محصولات">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="جست‌وجو بین خوراکی‌ها..." />
+      </label>
+      <button class="cart" id="cartBtn">🛒 سبد خرید <b id="cartCount">۰</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">✨ طعم‌های خاص از سراسر دنیا</span>
+        <h1>یه دنیای خوشمزه،<br>فقط چند کلیک با تو فاصله داره!</h1>
+        <p>شکلات، بیسکویت، چیپس و خوراکی‌های جذاب خارجی رو یک‌جا پیدا کن.</p>
+        <button class="primary" id="showProducts">دیدن محصولات ←</button>
+      </div>
+      <div class="hero-art" aria-hidden="true">🍫 🍪 🍿</div>
+    </section>
+
+    <div class="section-head">
+      <h2>🛍️ دسته‌بندی‌ها</h2><small>برای پیدا کردن طعم دلخواهت</small>
+    </div>
+    <section class="categories" id="categories">
+      <button class="cat active" data-category="همه"><span class="emoji">🎁</span><span>همه</span></button>
+      <button class="cat" data-category="شکلات"><span class="emoji">🍫</span><span>شکلات</span></button>
+      <button class="cat" data-category="بیسکویت"><span class="emoji">🍪</span><span>بیسکویت</span></button>
+      <button class="cat" data-category="چیپس"><span class="emoji">🥔</span><span>چیپس و اسنک</span></button>
+      <button class="cat" data-category="آب‌نبات"><span class="emoji">🍬</span><span>آب‌نبات</span></button>
+      <button class="cat" data-category="نوشیدنی"><span class="emoji">🥤</span><span>نوشیدنی</span></button>
+    </section>
+
+    <div class="section-head" id="productSection">
+      <h2>🔥 پیشنهادهای شیرینیکو</h2><small id="resultCount">۴ محصول نمونه</small>
+    </div>
+    <section class="products" id="products"></section>
+    <div class="empty" id="empty">محصولی با این جست‌وجو پیدا نشد. عبارت دیگری امتحان کن.</div>
+
+    <section class="banner">
+      <div><strong>🎉 خوراکی‌های تازه کشف کن!</strong><p>به‌زودی محصولات بیشتر، پیشنهادهای ویژه و تخفیف‌های جذاب اضافه می‌شن.</p></div>
+      <div class="snacks" aria-hidden="true">🍭 🍿 🍫</div>
+    </section>
+    <div class="notice">توجه: این نسخه، نمونه‌ی اولیه برای طراحی و آزمایش است. قیمت‌ها و محصولات نمایشی‌اند؛ پرداخت آنلاین، ثبت سفارش واقعی و پنل مدیریت هنوز به سرور متصل نشده‌اند.</div>
+  </main>
+
+  <footer>Shiriniko © ۲۰۲۶<br>طعم‌های خاص، انتخاب‌های خوشمزه 💛</footer>
+
+  <script>
+    const products = [
+      {id:1,name:"شکلات شیری خارجی",brand:"نمونه محصول",category:"شکلات",emoji:"🍫",price:125000,oldPrice:150000,discount:"۱۷٪"},
+      {id:2,name:"بیسکویت کرم‌دار",brand:"نمونه محصول",category:"بیسکویت",emoji:"🍪",price:85000,oldPrice:100000,discount:"۱۵٪"},
+      {id:3,name:"چیپس سیب‌زمینی",brand:"نمونه محصول",category:"چیپس",emoji:"🥔",price:75000,oldPrice:90000,discount:"۱۷٪"},
+      {id:4,name:"آب‌نبات میوه‌ای رنگارنگ",brand:"نمونه محصول",category:"آب‌نبات",emoji:"🍬",price:65000,oldPrice:75000,discount:"۱۳٪"},
+      {id:5,name:"نوشیدنی گازدار",brand:"نمونه محصول",category:"نوشیدنی",emoji:"🥤",price:95000,oldPrice:0,discount:""}
+    ];
+    let activeCategory = "همه";
+    let cart = [];
+    const faNumber = n => n.toLocaleString("fa-IR");
+    const toman = n => faNumber(n) + " تومان";
+
+    function renderProducts(){
+      const query = document.getElementById("search").value.trim().toLowerCase();
+      const filtered = products.filter(p =>
+        (activeCategory === "همه" || p.category === activeCategory) &&
+        (p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query))
+      );
+      document.getElementById("products").innerHTML = filtered.map(p => `
+        <article class="product">
+          <div class="picture"><span>${p.emoji}</span>${p.discount ? `<span class="discount">${p.discount} تخفیف</span>` : ""}</div>
+          <h3>${p.name}</h3>
+          <div class="meta">${p.brand} · دسته: ${p.category}</div>
+          <div class="price-row"><span class="price">${toman(p.price)}</span>${p.oldPrice ? `<span class="unit"><s>${faNumber(p.oldPrice)}</s></span>` : ""}</div>
+          <button class="add" data-add="${p.id}">＋ افزودن به سبد</button>
+        </article>`).join("");
+      document.getElementById("empty").style.display = filtered.length ? "none" : "block";
+      document.getElementById("resultCount").textContent = faNumber(filtered.length) + " محصول";
+    }
+
+    document.getElementById("products").addEventListener("click", e => {
+      const button = e.target.closest("[data-add]");
+      if(!button) return;
+      const id = Number(button.dataset.add);
+      cart.push(id);
+      document.getElementById("cartCount").textContent = faNumber(cart.length);
+      button.textContent = "✓ اضافه شد";
+      setTimeout(() => button.textContent = "＋ افزودن به سبد", 900);
+    });
+    document.getElementById("categories").addEventListener("click", e => {
+      const button = e.target.closest("[data-category]");
+      if(!button) return;
+      activeCategory = button.dataset.category;
+      document.querySelectorAll(".cat").forEach(el => el.classList.toggle("active", el === button));
+      renderProducts();
+    });
+    document.getElementById("search").addEventListener("input", renderProducts);
+    document.getElementById("showProducts").addEventListener("click", () => document.getElementById("productSection").scrollIntoView({behavior:"smooth"}));
+    document.getElementById("cartBtn").addEventListener("click", () => {
+      if(!cart.length){ alert("سبد خریدت فعلاً خالیه. یک محصول اضافه کن!"); return; }
+      const counts = {};
+      cart.forEach(id => counts[id] = (counts[id] || 0) + 1);
+      const summary = Object.entries(counts).map(([id,count]) => {
+        const p = products.find(x => x.id === Number(id));
+        return `${p.name} × ${faNumber(count)}`;
+      }).join("\\n");
+      const total = cart.reduce((sum,id) => sum + products.find(p => p.id === id).price, 0);
+      alert("سبد خرید آزمایشی:\\n" + summary + "\\n\\nجمع نمونه: " + toman(total) + "\\n\\nدر مرحله بعد، سبد خرید واقعی و ثبت سفارش را می‌سازیم.");
+    });
+    renderProducts();
+  </script>
+</body>
+</html>
